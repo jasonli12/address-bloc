@@ -19,4 +19,16 @@ require_relative 'entry'
 
     entries.insert(index, Entry.new(name, phone_number, email))
   end
+
+  def remove_entry(name, phone_number, email)
+    index = 0
+    entries.each do |entry|
+      if name = entry.name && phone_number = entry.phone_number && email = entry.email
+        break
+      end
+      index += 1
+    end
+
+    entries.slice!(index)
+  end
 end
